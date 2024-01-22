@@ -522,7 +522,7 @@
                   (map (fn [width col] (pad width col)) widths row))]
     (map pad-row rows)))
 
-(defn format-table [{:keys [rows indent]}]
+(defn format-table [{:keys [rows indent] :or {indent 0}}]
   (let [rows (pad-cells rows)
         fmt-row (fn [leader divider trailer row]
                   (str leader
